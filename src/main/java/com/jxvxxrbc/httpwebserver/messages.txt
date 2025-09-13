@@ -1,0 +1,5 @@
+El sol se esconde tras las montanas lejanas,
+el viento susurra secretos al oido del bosque.
+Las estrellas comienzan a bordar el cielo oscuro,
+y la noche extiende su manto con calma infinita.
+end
