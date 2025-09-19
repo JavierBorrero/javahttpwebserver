@@ -9,7 +9,7 @@ import java.net.Socket;
  */
 public class TcpListener {
 
-	static byte[] buffer = new byte[16];
+	static byte[] buffer = new byte[8];
 
 	public TcpListener() {
 	}
@@ -37,6 +37,7 @@ public class TcpListener {
 			InputStream is = s.getInputStream();
 			// read message from socket until the end
 			while ((readBytes = is.read(buffer)) != -1) {
+				// for 8 bytes
 				for (int i = 0; i < readBytes; i++) {
 					// go char by char
 					char c = (char) buffer[i];
@@ -46,9 +47,11 @@ public class TcpListener {
 						System.out.println("read: " + str);
 						str = "";
 					} else {
-						// else keep appending chars
 						str += c;
 					}
+				}
+				if (str.endsWith("}")) {
+					System.out.println("read: " + str);
 				}
 			}
 			// close inputstream
